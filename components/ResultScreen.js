@@ -1,19 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // Para o ícone de perfil
+import { Ionicons } from '@expo/vector-icons'; 
 
 export default function ResultScreen({ navigation, route }) {
-
   const userName = route.params?.userName || 'Usuário';
-  const result = route.params?.result || 0.0;
+  const totalTCO2e = route.params?.totalTCO2e || 0.0; 
 
   return (
     <View style={styles.background}>
-
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
         <Ionicons name="arrow-back" size={24} color="#fff" />
       </TouchableOpacity>
-
 
       <View style={styles.header}>
         <View style={styles.userInfo}>
@@ -25,19 +22,17 @@ export default function ResultScreen({ navigation, route }) {
         </View>
       </View>
 
-  
       <View style={styles.divider}></View>
 
- 
       <View style={styles.resultContainer}>
         <Text style={styles.resultLabel}>Resultados</Text>
         <View style={styles.resultCircle}>
-          <Text style={styles.result}>{result}</Text>
+          <Text style={styles.result}>{totalTCO2e.toFixed(2)}</Text>
           <Text style={styles.resultText}> tCO₂e/ano</Text>
         </View>
       </View>
 
-      {/* Botão para recalcular */}
+    
       <TouchableOpacity style={styles.recalculateButton} onPress={() => navigation.navigate('UserDataScreen')}>
         <Text style={styles.recalculateButtonText}>Calcular Novamente</Text>
       </TouchableOpacity>
@@ -45,7 +40,7 @@ export default function ResultScreen({ navigation, route }) {
   );
 }
 
-const { height, width } = Dimensions.get('window'); // Dimensões da tela
+const { height, width } = Dimensions.get('window'); 
 
 const styles = StyleSheet.create({
   background: {
@@ -67,12 +62,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
-
   },
   welcomeText: {
     fontSize: 15,
     lineHeight: 14,
-    fontWeight: 400,
+    fontWeight: '400',
     color: '#fff',
     marginLeft: 10,
     marginTop: 10,
@@ -80,8 +74,7 @@ const styles = StyleSheet.create({
   userName: {
     fontSize: 17,
     lineHeight: 16,
-    pragraph: 8,
-    fontWeight: 400,
+    fontWeight: '400',
     color: '#fff',
     paddingVertical: 3,
     marginLeft: 10,
@@ -112,7 +105,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 18,
     color: '#fff',
-    fontWeight: 400,
+    fontWeight: '400',
   },
   result: {
     fontSize: 61,
