@@ -7,7 +7,7 @@ import bg from '../assets/bg.jpeg';
 export default function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground 
-      source={bg}  // Use a variável importada para o caminho da imagem
+      source={bg}  
       style={styles.background}
     >
       <View style={styles.container}>

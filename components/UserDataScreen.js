@@ -4,9 +4,9 @@ import bgforest from '../assets/bgforest.png';
 import logo from '../assets/logo.png';
 
 export default function UserDataScreen({ navigation }) {
-  const [name, setName] = useState(''); // Estado para armazenar o nome do usuário
-  const [email, setEmail] = useState(''); // Estado para armazenar o email do usuário
-  const [phone, setPhone] = useState(''); // Estado para armazenar o telefone do usuário
+  const [name, setName] = useState(''); 
+  const [email, setEmail] = useState(''); 
+  const [phone, setPhone] = useState(''); 
 
   return (
     <ImageBackground 
@@ -28,7 +28,7 @@ export default function UserDataScreen({ navigation }) {
               style={styles.input} 
               placeholder="Digite seu nome completo" 
               value={name}
-              onChangeText={setName} // Atualiza o estado do nome
+              onChangeText={setName} 
             />
           </View>
 
@@ -40,7 +40,7 @@ export default function UserDataScreen({ navigation }) {
               placeholder="Digite seu e-mail" 
               keyboardType="email-address"
               value={email}
-              onChangeText={setEmail} // Atualiza o estado do email
+              onChangeText={setEmail} 
             />
           </View>
 
@@ -52,13 +52,13 @@ export default function UserDataScreen({ navigation }) {
               placeholder="Digite seu telefone" 
               keyboardType="phone-pad"
               value={phone}
-              onChangeText={setPhone} // Atualiza o estado do telefone
+              onChangeText={setPhone} 
             />
           </View>
 
           <TouchableOpacity 
             style={styles.nextButton}
-            onPress={() => navigation.navigate('Quests', { userName: name })} // Passa o nome para a próxima tela
+            onPress={() => navigation.navigate('Quests', { userName: name })} 
           >
             <Text style={styles.nextButtonText}>PRÓXIMO</Text>
           </TouchableOpacity>
@@ -68,7 +68,7 @@ export default function UserDataScreen({ navigation }) {
   );
 }
 
-const { height, width } = Dimensions.get('window');  // Pegue as dimensões da tela
+const { height, width } = Dimensions.get('window'); 
 
 const styles = StyleSheet.create({
   background: {
